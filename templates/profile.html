@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Личный кабинет</h2>
+  <p>Ваши обращения:</p>
+  <ul>
+    {% for m in messages %}
+    <li><strong>{{ m.submitted_at }}</strong>: {{ m.message }}</li>
+    {% empty %}
+    <li>Нет отправленных сообщений.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #004aad;
+}
+
+a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  background-color: #004aad;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ff0 !important;
+}
+
+.high-contrast .navbar {
+  background-color: #000 !important;
+}
+
+.high-contrast .navbar .nav-link {
+  color: #ff0 !important;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить новость</title>
+</head>
+<body>
+    <h1>Добавить новость</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if form.errors %}
+            <div class="errors">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <button type="submit">Добавить</button>
+    </form>
+
+    <hr>
+
+    <h2>Существующие новости</h2>
+    <ul>
+        {% for news in news_list %}
+            <li>
+                <strong>{{ news.title }}</strong> ({{ news.date }})
+                <form action="{% url 'delete_news' news.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('Удалить эту новость?');">Удалить</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>Новостей пока нет.</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>Обратная связь</h2>
+    {% if feedback_list %}
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Сообщение</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feedback in feedback_list %}
+                    <tr>
+                        <td>{{ feedback.name }}</td>
+                        <td>{{ feedback.email }}</td>
+                        <td>{{ feedback.message }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Обращений пока нет.</p>
+    {% endif %}
+</body>
+</html>

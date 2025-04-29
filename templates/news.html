@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <div class="container mt-5"> <!-- Добавлен отступ сверху -->
+        <h1 class="mb-4">Новости компании "Самолет"</h1>
+
+        <!-- Основной контент страницы (если есть) -->
+
+        <div class="news-container">
+            {% for article in news %}
+                <div class="card news-card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title h4">{{ article.title }}</h2>
+                        <div class="article-meta mb-3">
+                            <span class="badge bg-primary">{{ article.category }}</span>
+                            <small class="text-muted ms-2">{{ article.date }}</small>
+                        </div>
+                        <div class="article-content" data-fulltext="{{ article.full_text }}" data-preview="{{ article.preview }}">
+                            <p class="card-text">{{ article.preview }}</p>
+                        </div>
+                        <button class="btn btn-link read-more-btn p-0" onclick="toggleFullText(this)">
+                            Читать полностью →
+                        </button>
+                    </div>
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}" class="card-img-bottom" alt="{{ article.title }}">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div> <!-- Закрытие контейнера -->
+
+    <style>
+        .news-card {
+            transition: transform 0.2s;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .read-more-btn {
+            text-decoration: none;
+            color: #0d6efd;
+        }
+
+        .article-content.collapsed {
+            max-height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-content.collapsed::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        }
+    </style>
+
+    <script>
+        function toggleFullText(btn) {
+            const content = btn.previousElementSibling;
+            const fullText = content.dataset.fulltext;
+
+            if (!content.classList.contains('expanded')) {
+                content.innerHTML = `<p>${fullText}</p>`;
+                content.classList.add('expanded');
+                btn.textContent = 'Свернуть ▲';
+            } else {
+                content.innerHTML = `<p>${content.dataset.preview}</p>`;
+                content.classList.remove('expanded');
+                btn.textContent = 'Читать полностью →';
+            }
+        }
+    </script>
+{% endblock %}

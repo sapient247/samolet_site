@@ -1,0 +1,3 @@
+.accessibility-mode { background-color: #000 !important; color: #fff !important; }
+.accessibility-mode .card { background-color: #333; color: #fff; }
+.accessibility-mode a, .accessibility-mode a:hover { color: #FFD700; }

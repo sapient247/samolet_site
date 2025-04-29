@@ -1,0 +1,46 @@
+/* Основные настройки для секций */
+section {
+    padding: 20px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Стили для изображений */
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Стили для отступов и выравнивания */
+.container {
+    max-width: 1140px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 40px;
+}
+
+/* Респонсивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col-md-8, .col-md-4 {
+        margin-bottom: 20px;
+    }
+}

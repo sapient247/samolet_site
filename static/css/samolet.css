@@ -1,0 +1,96 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #004aad;
+}
+
+a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  background-color: #004aad;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast a {
+  color: #ff0 !important;
+}
+
+.high-contrast .navbar {
+  background-color: #000 !important;
+}
+
+.high-contrast .navbar .nav-link {
+  color: #ff0 !important;
+}
+
+/* Фон и стиль по умолчанию */
+body {
+    background-image: url("/media/samolet/back.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+}
+
+/* Обёртка с затемнением для читаемости текста */
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для слабовидящих */
+body.high-contrast {
+    background: #fff !important;
+    color: #000 !important;
+    background-image: none !important;
+    font-size: 1.5em !important;
+    line-height: 1.6em;
+}
+
+body.high-contrast a {
+    color: #0000EE !important;
+    text-decoration: underline !important;
+}
+
+body.high-contrast .container {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast li,
+body.high-contrast .navbar .nav-link {
+    font-weight: bold !important;
+    color: #000 !important;
+}
+
+body.high-contrast .navbar {
+    background: #fff !important;
+    border-bottom: 2px solid #000 !important;
+}

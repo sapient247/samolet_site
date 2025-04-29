@@ -1,0 +1,40 @@
+<style>
+  body.high-contrast {
+    background-color: #000 !important;
+    color: #FFF !important;
+    font-size: 1.3em !important;
+    line-height: 1.6 !important;
+  }
+
+  body.high-contrast a {
+    color: #FFD700 !important;
+    text-decoration: underline;
+  }
+
+  body.high-contrast .navbar,
+  body.high-contrast .btn,
+  body.high-contrast .form-control {
+    background-color: #000 !important;
+    color: #FFF !important;
+    border: 2px solid #FFF !important;
+  }
+
+  body.high-contrast input,
+  body.high-contrast textarea,
+  body.high-contrast select {
+    background-color: #000 !important;
+    color: #FFF !important;
+    border: 2px solid #FFF !important;
+  }
+
+  .btn-outline-light {
+    color: #FFF !important;
+    border-color: #FFF !important;
+  }
+
+  /* Можно также увеличить кнопки */
+  #toggle-vision {
+    font-size: 1.2em;
+    padding: 10px 15px;
+  }
+</style>
