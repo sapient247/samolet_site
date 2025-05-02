@@ -59,7 +59,7 @@ def profile(request):
     messages = Feedback.objects.filter(email=request.user.email)
     return render(request, 'profile.html', {'messages': messages})
 
-def sitemap(request):
+def sitemap_view(request):
     return render(request, 'sitemap.html')
 
 # Функция для проверки, является ли пользователь администратором
