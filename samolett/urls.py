@@ -14,6 +14,7 @@ urlpatterns = [
     path('', company_views.home, name='home'),
     path('projects/', company_views.projects, name='projects'),
     path('news/', company_views.news, name='news'),
+    path('sitemap/', company_views.sitemap_view, name='sitemap'),
     path('feedback/', company_views.feedback, name='feedback'),
     path('accounts/register/', company_views.register, name='register'),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
